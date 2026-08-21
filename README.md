@@ -40,7 +40,6 @@ etiqueta puede derivarse de la calificación sin anotación manual.
 
 - `notebooks/` — notebook ejecutable del pipeline de preprocesamiento.
 - `docs/` — reporte técnico con las decisiones, los resultados y las limitaciones.
-- `artifacts/` — vocabulario y parámetros del pipeline.
 
 ## Referencia del conjunto de datos
 
