@@ -1,0 +1,387 @@
+{
+  "entorno": {
+    "python": "3.13.18",
+    "tensorflow": "2.21.0",
+    "keras": "3.13.2",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "gpu_disponible": false,
+    "dispositivos_gpu": [],
+    "procesador": "x86_64",
+    "en_colab": true,
+    "semilla": 42
+  },
+  "umbral_revision": 0.6,
+  "latencia": {
+    "mediana_ms": 14.149919500027863,
+    "p95_ms": 17.951827000069898,
+    "reseñas_por_segundo_en_lote": 1017.1638477862425
+  },
+  "criterio_exito": {
+    "supera_gru_en_validacion": true,
+    "sin_deterioro_por_clase": true
+  },
+  "f1_por_clase": {
+    "F1 GRU (U2)": {
+      "Negativo": 0.7547762082589166,
+      "Neutral": 0.3371292000562351,
+      "Positivo": 0.9410044831394971
+    },
+    "F1 BiGRU + Atención": {
+      "Negativo": 0.7733769315964348,
+      "Neutral": 0.34676958261863916,
+      "Positivo": 0.9457593581143521
+    },
+    "Diferencia F1": {
+      "Negativo": 0.018600723337518277,
+      "Neutral": 0.00964038256240407,
+      "Positivo": 0.004754874974854939
+    },
+    "Recall GRU (U2)": {
+      "Negativo": 0.7492210164392393,
+      "Neutral": 0.2622484689413823,
+      "Positivo": 0.9636274922930205
+    },
+    "Recall BiGRU + Atención": {
+      "Negativo": 0.7877941334479424,
+      "Neutral": 0.2653105861767279,
+      "Positivo": 0.9646476967774845
+    }
+  },
+  "demo": [
+    {
+      "Tipo": "Elogio directo",
+      "Reseña": "I absolutely love this product. It tastes great and I will buy it again.",
+      "Predicción": "Positivo",
+      "P(Negativo)": 0.0,
+      "P(Neutral)": 0.0,
+      "P(Positivo)": 1.0,
+      "Revisión humana": "No"
+    },
+    {
+      "Tipo": "Queja directa",
+      "Reseña": "The package arrived damaged and the product was stale. I am very disappointed.",
+      "Predicción": "Negativo",
+      "P(Negativo)": 0.993,
+      "P(Neutral)": 0.007,
+      "P(Positivo)": 0.0,
+      "Revisión humana": "No"
+    },
+    {
+      "Tipo": "Opinión tibia",
+      "Reseña": "The product is acceptable. It is not especially good or bad.",
+      "Predicción": "Neutral",
+      "P(Negativo)": 0.249,
+      "P(Neutral)": 0.674,
+      "P(Positivo)": 0.077,
+      "Revisión humana": "No"
+    },
+    {
+      "Tipo": "Opinión mixta",
+      "Reseña": "The flavor is wonderful, but the price is way too high and shipping took forever.",
+      "Predicción": "Positivo",
+      "P(Negativo)": 0.132,
+      "P(Neutral)": 0.171,
+      "P(Positivo)": 0.697,
+      "Revisión humana": "No"
+    },
+    {
+      "Tipo": "Negación",
+      "Reseña": "Not bad at all, honestly better than I expected.",
+      "Predicción": "Positivo",
+      "P(Negativo)": 0.048,
+      "P(Neutral)": 0.219,
+      "P(Positivo)": 0.733,
+      "Revisión humana": "No"
+    },
+    {
+      "Tipo": "Sarcasmo",
+      "Reseña": "Oh great, another box of stale crackers. Exactly what I wanted.",
+      "Predicción": "Positivo",
+      "P(Negativo)": 0.308,
+      "P(Neutral)": 0.074,
+      "P(Positivo)": 0.618,
+      "Revisión humana": "No"
+    }
+  ],
+  "vocabulario": {
+    "tamano_vocabulario": 20000,
+    "tamano_indice": 20002,
+    "parametros_embedding": 2560256,
+    "parametros_modelo": 2651395,
+    "oov_por_particion": [
+      {
+        "Partición": "train",
+        "Tokens": 20070525,
+        "% tokens <OOV>": 0.00889732580488054,
+        "% reseñas con al menos un <OOV>": 0.3443090597893038
+      },
+      {
+        "Partición": "val",
+        "Tokens": 4583129,
+        "% tokens <OOV>": 0.009803346141904363,
+        "% reseñas con al menos un <OOV>": 0.3811897978564645
+      },
+      {
+        "Partición": "test",
+        "Tokens": 4272285,
+        "% tokens <OOV>": 0.010190799537015906,
+        "% reseñas con al menos un <OOV>": 0.3769671686338353
+      }
+    ],
+    "desempeno_por_oov": [
+      {
+        "Palabras <OOV>": "0 %",
+        "Reseñas": 36739,
+        "Accuracy": 0.8940363101880835,
+        "F1-macro": 0.7023188375916818
+      },
+      {
+        "Palabras <OOV>": "0–2 %",
+        "Reseñas": 11301,
+        "Accuracy": 0.8531103442173259,
+        "F1-macro": 0.6714450564431248
+      },
+      {
+        "Palabras <OOV>": "2–5 %",
+        "Reseñas": 9169,
+        "Accuracy": 0.8750136328934454,
+        "F1-macro": 0.6646391822748173
+      },
+      {
+        "Palabras <OOV>": "5–10 %",
+        "Reseñas": 1560,
+        "Accuracy": 0.8711538461538462,
+        "F1-macro": 0.6388829338037713
+      },
+      {
+        "Palabras <OOV>": "> 10 %",
+        "Reseñas": 199,
+        "Accuracy": 0.8592964824120602,
+        "F1-macro": 0.6084959349593496
+      }
+    ],
+    "terminos_recientes_oov": [
+      "keto",
+      "covid",
+      "pandemic",
+      "airfryer",
+      "oatmilk",
+      "monkfruit",
+      "collagen",
+      "tiktok",
+      "instagram"
+    ]
+  },
+  "ajuste_por_clase": {
+    "pesos": {
+      "Negativo": 1.2,
+      "Neutral": 2.0,
+      "Positivo": 1.0
+    },
+    "comparacion": [
+      {
+        "Conjunto": "Validación",
+        "Variante": "Sin ajuste",
+        "Accuracy": 0.8785103785103785,
+        "F1-macro": 0.701132825893724,
+        "F1 Negativo": 0.7783141100553833,
+        "F1 Neutral": 0.3828013029315961,
+        "F1 Positivo": 0.942283064694193,
+        "Recall Neutral": 0.30351239669421487
+      },
+      {
+        "Conjunto": "Validación",
+        "Variante": "Con ajuste por clase",
+        "Accuracy": 0.8695394112060779,
+        "F1-macro": 0.7192048083629512,
+        "F1 Negativo": 0.7734254584108424,
+        "F1 Neutral": 0.4455309994132603,
+        "F1 Positivo": 0.9386579672647506,
+        "Recall Neutral": 0.4706611570247934
+      },
+      {
+        "Conjunto": "Prueba",
+        "Variante": "Sin ajuste",
+        "Accuracy": 0.8825125491792158,
+        "F1-macro": 0.6886352907764755,
+        "F1 Negativo": 0.7733769315964348,
+        "F1 Neutral": 0.3467695826186392,
+        "F1 Positivo": 0.9457593581143522,
+        "Recall Neutral": 0.2653105861767279
+      },
+      {
+        "Conjunto": "Prueba",
+        "Variante": "Con ajuste por clase",
+        "Accuracy": 0.874304707638041,
+        "F1-macro": 0.7075529585756106,
+        "F1 Negativo": 0.7647123407992973,
+        "F1 Neutral": 0.414290326051867,
+        "F1 Positivo": 0.9436562088756677,
+        "Recall Neutral": 0.4210411198600175
+      }
+    ]
+  },
+  "metricas_recalculadas_test": {
+    "Accuracy": 0.8825125491792158,
+    "F1-macro": 0.6886352907764755,
+    "Precision macro": 0.7291623267710872,
+    "Recall macro": 0.6725841388007182
+  },
+  "matriz_confusion_test": [
+    [
+      7332,
+      551,
+      1424
+    ],
+    [
+      1388,
+      1213,
+      1971
+    ],
+    [
+      934,
+      660,
+      43495
+    ]
+  ],
+  "coincide_con_registro": {
+    "f1_macro": true,
+    "matriz_confusion": true
+  },
+  "por_longitud": [
+    {
+      "Palabras": "1-20",
+      "Reseñas": 1088,
+      "% del total": 0.018450685117351782,
+      "Accuracy": 0.9080882352941176,
+      "F1-macro": 0.6754196218002583
+    },
+    {
+      "Palabras": "21-50",
+      "Reseñas": 26000,
+      "% del total": 0.4409171075837742,
+      "Accuracy": 0.9060769230769231,
+      "F1-macro": 0.6992571106073607
+    },
+    {
+      "Palabras": "51-100",
+      "Reseñas": 18386,
+      "% del total": 0.3117962284628951,
+      "Accuracy": 0.8809420211030131,
+      "F1-macro": 0.6975422746309374
+    },
+    {
+      "Palabras": "101-199",
+      "Reseñas": 10070,
+      "% del total": 0.1707705874372541,
+      "Accuracy": 0.8579940417080437,
+      "F1-macro": 0.6907461916628851
+    },
+    {
+      "Palabras": "200 (truncadas)",
+      "Reseñas": 3424,
+      "% del total": 0.058065391398724735,
+      "Accuracy": 0.7759929906542056,
+      "F1-macro": 0.5723889600937636
+    }
+  ],
+  "curva_umbral": [
+    {
+      "Umbral": 0.4,
+      "% automático": 0.9922330755664089,
+      "Accuracy automática": 0.8867202187660229,
+      "F1-macro automático": 0.6916201808774208,
+      "% de errores enviados a revisión": 0.04330254041570439,
+      "Reseñas a revisar": 458
+    },
+    {
+      "Umbral": 0.45,
+      "% automático": 0.9772418939085605,
+      "Accuracy automática": 0.8938847048207407,
+      "F1-macro automático": 0.6961700610208919,
+      "% de errores enviados a revisión": 0.1173498845265589,
+      "Reseñas a revisar": 1342
+    },
+    {
+      "Umbral": 0.5,
+      "% automático": 0.9538563288563289,
+      "Accuracy automática": 0.9045637989581666,
+      "F1-macro automático": 0.7010128783676185,
+      "% de errores enviados a revisión": 0.2251732101616628,
+      "Reseñas a revisar": 2721
+    },
+    {
+      "Umbral": 0.55,
+      "% automático": 0.9284357617690951,
+      "Accuracy automática": 0.9152115145758749,
+      "F1-macro automático": 0.7032196608120288,
+      "% de errores enviados a revisión": 0.32996535796766746,
+      "Reseñas a revisar": 4220
+    },
+    {
+      "Umbral": 0.6,
+      "% automático": 0.9030491113824447,
+      "Accuracy automática": 0.9260858951005615,
+      "F1-macro automático": 0.7072424327689179,
+      "% de errores enviados a revisión": 0.43187066974595845,
+      "Reseñas a revisar": 5717
+    },
+    {
+      "Umbral": 0.65,
+      "% automático": 0.879070004070004,
+      "Accuracy automática": 0.9348341917935066,
+      "F1-macro automático": 0.7063850345076629,
+      "% de errores enviados a revisión": 0.5124133949191686,
+      "Reseñas a revisar": 7131
+    },
+    {
+      "Umbral": 0.7,
+      "% automático": 0.8539377289377289,
+      "Accuracy automática": 0.942865653857611,
+      "F1-macro automático": 0.7050864217483536,
+      "% de errores enviados a revisión": 0.5847286374133949,
+      "Reseñas a revisar": 8613
+    },
+    {
+      "Umbral": 0.75,
+      "% automático": 0.8274657441324108,
+      "Accuracy automática": 0.9508136246259786,
+      "F1-macro automático": 0.7054005564005777,
+      "% de errores enviados a revisión": 0.6535796766743649,
+      "Reseñas a revisar": 10174
+    },
+    {
+      "Umbral": 0.8,
+      "% automático": 0.7964319630986297,
+      "Accuracy automática": 0.9592879652499787,
+      "F1-macro automático": 0.7094162485941341,
+      "% de errores enviados a revisión": 0.7240184757505773,
+      "Reseñas a revisar": 12004
+    },
+    {
+      "Umbral": 0.85,
+      "% automático": 0.7601241351241351,
+      "Accuracy automática": 0.9675836066305246,
+      "F1-macro automático": 0.7163569637016067,
+      "% de errores enviados a revisión": 0.7902713625866051,
+      "Reseñas a revisar": 14145
+    },
+    {
+      "Umbral": 0.9,
+      "% automático": 0.7115045448378782,
+      "Accuracy automática": 0.9758318238154257,
+      "F1-macro automático": 0.7249263057841732,
+      "% de errores enviados a revisión": 0.8536374133949192,
+      "Reseñas a revisar": 17012
+    },
+    {
+      "Umbral": 0.95,
+      "% automático": 0.6277981277981278,
+      "Accuracy automática": 0.9847649918962723,
+      "F1-macro automático": 0.7465665790485122,
+      "% de errores enviados a revisión": 0.9185912240184757,
+      "Reseñas a revisar": 21948
+    }
+  ]
+}

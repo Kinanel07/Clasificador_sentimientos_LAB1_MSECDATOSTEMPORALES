@@ -1,0 +1,26 @@
+{
+  "dataset": "Amazon Fine Food Reviews",
+  "registros_originales": 568454,
+  "registros_tras_limpieza": 393119,
+  "proporcion_split": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "tipo_split": "cronologico",
+  "vocab_size": 20000,
+  "tamano_indice": 20002,
+  "pad_token": "<PAD>",
+  "pad_index": 0,
+  "oov_token": "<OOV>",
+  "oov_index": 1,
+  "max_len": 200,
+  "padding": "post",
+  "truncating": "post",
+  "mapeo_sentimiento": {
+    "Negativo": 0,
+    "Neutral": 1,
+    "Positivo": 2
+  },
+  "semilla": 42
+}
